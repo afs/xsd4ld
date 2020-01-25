@@ -40,5 +40,10 @@ abstract class BaseDuration extends XSDDatatype {
             return null;
         }
     }
+    /** Given a legal lexical form, does it have a time part (hours, minutes seconds) ? */
+    protected boolean hasTime(String lex) {
+        // Note M is both Month and Minute.
+        return lex.contains("T");
+    }
 }
 
