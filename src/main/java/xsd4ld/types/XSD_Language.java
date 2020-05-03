@@ -17,35 +17,34 @@
 
 package xsd4ld.types;
 
+import java.util.Locale;
 import java.util.regex.Pattern;
 
-import langtag.LangTag;
 import xsd4ld.XSDConst;
 import xsd4ld.XSDTypeRegistry;
 
 public class XSD_Language extends BaseString {
+    private static Locale.Builder locBuild = new Locale.Builder();
     private Pattern pattern = XSDTypeRegistry.getRegex(XSDConst.xsd_language);
-    
+
     public XSD_Language() {
         super(XSDConst.xsd_language, XSDConst.xsd_token);
     }
-    
+
     @Override
     protected String valueOrException(String lex) {
         if ( isValid(lex) )
-            return LangTag.canonical(lex);
+            return locBuild.setLanguageTag(lex).build().toLanguageTag();
         return null;
     }
 
     @Override
     public boolean isValid(String lex) {
-        //return null != LangTag2.parse(lex);
         return pattern.matcher(lex).matches();
     }
-    
+
     @Override
     public Pattern getRegex() {
         return XSDTypeRegistry.getRegex(XSDConst.xsd_language);
     }
 }
-

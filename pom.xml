@@ -24,24 +24,16 @@
   <groupId>org.seaborne</groupId>
   <artifactId>xsd4ld</artifactId>
   <version>0.0.0-SNAPSHOT</version>
-  <name>xsd4j</name>
+  <name>xsd4ld</name>
   <description>XSD for Linked Data Java-based systems</description>
-  <!--
-  <parent>
-    <groupId>org.apache.jena</groupId>
-    <artifactId>jena-parent</artifactId>
-    <version>12</version>
-    <relativePath/>
-  </parent>
-  -->
 
   <properties>
     <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
     <build.time.xsd>${maven.build.timestamp}</build.time.xsd>
 
     <ver.junit>4.12</ver.junit>
-    <ver.slf4j>1.7.26</ver.slf4j>
-    <ver.log4j>1.2.17</ver.log4j>
+    <ver.slf4j>1.7.30</ver.slf4j>
+    <ver.log4j2>2.13.1</ver.log4j2>
 
   </properties>
 
@@ -61,15 +53,9 @@
     </dependency>
 
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>${ver.slf4j}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>${ver.log4j}</version>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j-impl</artifactId>
+      <version>${ver.log4j2}</version>
     </dependency>
 
     <!-- Used for BinHex and Base64 -->
