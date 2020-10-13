@@ -19,7 +19,7 @@ package xsd4ld;
 
 import org.junit.Test ;
 
-/** Test of the machinary for numbers and derived types.
+/** Test of the machinery for numbers and derived types.
  * @see TestIntegerRange
  */
 public class TestNumber {

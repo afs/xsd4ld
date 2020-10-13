@@ -20,7 +20,7 @@ package xsd4ld;
 import org.junit.Test ;
 import static org.junit.Assert.* ;
 
-/** Test of the machinary for strings and derived types.
+/** Test of the machinery for strings and derived types.
  * @see TestIntegerRange
  */
 public class TestString {
